@@ -15,6 +15,11 @@ const calculate = {
     '=':(firstNumber, secondNumber) => secondNumber,
 }
 
+function playMusic() {
+    var music = new Audio('./tick.mp3');
+    music.play();
+}
+
 function sendNumberValue(value) {
     // Replace current display value if first value is entered
     if(awaitingNextValue) {
@@ -73,6 +78,11 @@ inputBtns.forEach((inputBtn) => {
     } else if(inputBtn.classList.contains('decimal')) {
         inputBtn.addEventListener('click', () => addDecimal())
     }
+})
+
+// adding audio to all buttons
+inputBtns.forEach(inputBtn => {
+    inputBtn.addEventListener('click', () => playMusic())
 })
 
 clearBtn.addEventListener('click', resetAll);
