@@ -1,0 +1,152 @@
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(235deg, #BABC4A 0%, #000000 100%), linear-gradient(235deg, #0026AC 0%, #282534 100%), linear-gradient(235deg, #00FFD1 0%, #000000 100%), radial-gradient(120% 185% at 25% -25%, #EEEEEE 0%, #EEEEEE 40%, #7971EA calc(40% + 1px), #7971EA 50%, #393E46 calc(50% + 1px), #393E46 70%, #222831 calc(70% + 1px), #222831 100%), radial-gradient(70% 140% at 90% 10%, #F5F5C6 0%, #F5F5C6 30%, #7DA87B calc(30% + 1px), #7DA87B 60%, #326765 calc(60% + 1px), #326765 80%, #27253D calc(80% + 1px), #27253D 100%);
+  background-blend-mode: overlay, lighten, overlay, color-burn, normal;
+  /* background: whitesmoke; */
+  /* background: linear-gradient(to right, #dce35b, #45b649); */
+  /* background: linear-gradient(to right, #3c3b3f, #605c3c); */
+}
+
+.calculator {
+  background: white;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
+
+}
+
+.calculator-display {
+  /* background: black; */
+  background: linear-gradient(to right top, #000000, #141414, #222222);
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 10px 10px 0 0;
+}
+
+.calculator-display h1 {
+  margin: 0;
+  padding: 25px;
+  font-size: 45px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  overflow-x: auto;
+}
+
+/* custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to right, #45b649, #06ec4b);
+}
+
+/* name */
+.name {
+  background: linear-gradient(to right, #dce35b, #45b649);
+  color: #fff;
+  padding: 5px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* button */
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  -moz-user-select: none;	   /* Firefox */
+	-ms-user-select: none;		/* IE 10+ and Edge */
+  user-select: none;
+}
+
+::selection {
+  color: #fdfdfd;
+  background: #08d45db2;
+}
+
+/* button styling start */
+button {
+  min-height: 50px;
+  font-weight: 100;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #6d6c6c;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px #999;
+}
+
+.operator {
+  background-color: #4d4d4d;
+}
+.operator:hover {
+  background: linear-gradient(to right, #3c3b3f, #605c3c);
+}
+
+.clear {
+  background: linear-gradient(to right, #ed213a, #93291e);
+}
+
+.clear:hover,
+.clear:active {
+  background: linear-gradient(to right, #93291e, #ed213a);
+}
+
+button:hover {background: linear-gradient(to right, #ff416c, #ff4b2b);}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px rgb(245, 244, 244);
+  transform: translateY(3px);
+}
+/* Button styling end */
+
+.equal-sign {
+  grid-column: -2;
+  grid-row: 2 / span 4;
+  background: linear-gradient(to right, #06ec4b, #45b649);
+}
+
+.equal-sign:hover,
+.equal-sign:active {
+  background: linear-gradient(to right, #45b649, #06ec4b);
+}
+
+/* media query: large smartphone (vertical) */
+
+@media screen and (max-width: 600px) {
+  .calculator {
+    width: 95%;
+  }
+}
